@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: List folder content
-      run:
+      run: |
         ls -l
         
     - name: Setting up the python environment
@@ -27,7 +27,4 @@ jobs:
     - name: Lint with flake8
       run: |
         flake8 --ignore=E128,E402,E501
-
-    - name: Test with pytest
-      run: |
-        pytest
+        
