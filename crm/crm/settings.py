@@ -15,8 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, 'subdir').
 BASE_DIR = os.path.split(os.path.dirname(__file__))[0]
 
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -123,7 +121,7 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static').replace('\\','/')
+STATIC_DIR = os.path.join(BASE_DIR, 'static').replace('\\', '/')
 STATICFILES_DIRS = [STATIC_DIR]
 
 # Default primary key field type
