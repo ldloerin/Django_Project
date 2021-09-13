@@ -16,9 +16,9 @@ class Customer(models.Model):
 
 class Product(models.Model):
     category_options = (
-                    ('Indoor', 'Indoor'),
-                    ('Outdoor', 'Outdoor'),
-                    )
+        ('Indoor', 'Indoor'),
+        ('Outdoor', 'Outdoor'),
+    )
 
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField(null=True)
@@ -29,10 +29,10 @@ class Product(models.Model):
 
 class Order(models.Model):
     status_options = (
-                    ('Pending', 'Pending'),
-                    ('Out of delivery', 'Out of delivery'),
-                    ('Delivered', 'Delivered')
-                    )
+        ('Pending', 'Pending'),
+        ('Out of delivery', 'Out of delivery'),
+        ('Delivered', 'Delivered')
+    )
 
     # customer
     # product
