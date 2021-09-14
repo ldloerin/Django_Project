@@ -14,11 +14,11 @@ def home(request):
     pending = orders.filter(status='Pending').count()
 
     context = {
-'customers': customers,
-    'orders': orders,
+        'customers': customers,
+        'orders': orders,
         'total_orders': total_orders,
-            'delivered': delivered,
-                'pending': pending
+        'delivered': delivered,
+        'pending': pending
     }
 
     return render(request, 'accounts/dashboard.html', context)
