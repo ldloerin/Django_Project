@@ -14,11 +14,11 @@ def home(request):
     pending = orders.filter(status='Pending').count()
 
     context = {
-    'customers': customers,
+'customers': customers,
     'orders': orders,
-    'total_orders': total_orders,
-    'delivered': delivered,
-    'pending': pending
+        'total_orders': total_orders,
+            'delivered': delivered,
+                'pending': pending
     }
 
     return render(request, 'accounts/dashboard.html', context)
@@ -27,7 +27,9 @@ def home(request):
 def products(request):
     products = Product.objects.all().order_by('name')
 
-    return render(request, 'accounts/products.html', {'products':products})
+    context = {'products': products}
+
+    return render(request, 'accounts/products.html', context)
 
 
 def customers(request):
