@@ -59,6 +59,7 @@ def create_order(request):
 
     return render(request, 'accounts/order_form.html', context)
 
+
 # pk -> Primary Key
 def update_order(request, pk):
     order = Order.objects.get(id=pk)
