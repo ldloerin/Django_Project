@@ -64,7 +64,7 @@ def create_order(request):
 def update_order(request, pk):
     order = Order.objects.get(id=pk)
     form = OrderForm(instance=order)
-    
+
     if request.method == 'POST':
         form = OrderForm(request.POST, instance=order)
         if form.is_valid():
