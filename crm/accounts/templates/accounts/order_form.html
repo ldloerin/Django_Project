@@ -2,11 +2,20 @@
 {% load static %}
 {% block content %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    {{form}}
+<br>
 
-    <input type="submit" name="submit">
-</form>
+<div class="row">
+	<div class="col-md-5">
+		<div class="card card-body">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <input class="btn bt-sm btn-info" type="submit" name="submit">
+            </form>
+		</div>
+	</div>
+</div>
+
+
 
 {% endblock %}
