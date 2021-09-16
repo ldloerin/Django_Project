@@ -4,6 +4,7 @@ from .models import Customer
 from .models import Order
 from .models import Product
 from .forms import OrderForm
+from .filters import OrderFilter
 
 # Create your views here.
 
@@ -39,10 +40,14 @@ def customers(request, pk_test):
     orders = customer.order_set.all()
     total_orders = orders.count()
 
+    my_filter = OrderFilter(request.GET, queryset=orders)
+    orders = my_filter.qs
+
     context = {
         'customer': customer,
         'orders': orders,
-        'total_orders': total_orders
+        'total_orders': total_orders,
+        'my_filter': my_filter
     }
 
     return render(request, 'accounts/customers.html', context)
