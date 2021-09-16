@@ -47,8 +47,10 @@ def customers(request, pk_test):
     return render(request, 'accounts/customers.html', context)
 
 
-def create_order(request):
-    form = OrderForm()
+def create_order(request, pk):
+    customer = Customer.objects.get(id=pk)
+    form = OrderForm(initial={'customer': customer})
+
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
