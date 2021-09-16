@@ -50,9 +50,9 @@ def customers(request, pk_test):
 
 def create_order(request, pk):
     OrderFormSet = inlineformset_factory(
-        Customer, 
-        Order, 
-        fields=('product', 'status'), 
+        Customer,
+        Order,
+        fields=('product', 'status'),
         extra=5
     )
     customer = Customer.objects.get(id=pk)
