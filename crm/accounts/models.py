@@ -38,6 +38,9 @@ class Product(models.Model):
         return self.name
 
 
+# after each change run
+# python ./manage.py makemigrations
+# python ./manage.py migrate
 class Order(models.Model):
     status_options = (
         ('Pending', 'Pending'),
@@ -49,6 +52,7 @@ class Order(models.Model):
     product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     status = models.CharField(max_length=200, null=True, choices=status_options)
+    note = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return self.product.name
